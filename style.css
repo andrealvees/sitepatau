@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #ddd;
+	font-family: 'Poppins', sans-serif;
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+	transition: 0.3s;
+}
+
+a:hover {
+	opacity: 0.7;
+}
+
+.logo {
+	color: #fff;
+	font-size: 24px;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+}
+
+nav {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background: linear-gradient(45deg, #59deff, #6aec9c);
+	height: 8vh;
+	box-shadow: 0px 5px 8px #bbb;
+}
+
+.nav-list {
+	list-style: none;
+	display: flex;
+}
+
+.nav-list li {
+	letter-spacing: 3px;
+	margin-left: 32px;
+	cursor: pointer;
+	color: #000;
+}
+
+.nav-list li:hover {
+	font-size: 15px;
+}
+
+.mobile-menu {
+	display: none;
+	cursor: pointer;
+}
+
+.mobile-menu div {
+	width: 32px;
+	height: 2px;
+	background: #fff;
+	margin: 8px;
+	transition: 0.3s;
+}
+
+.perfil {
+	position: absolute;
+	width: 100px;
+	right: 0;
+	border-radius: 50%;
+}
+
+.title {
+	background-color: #fff;
+	box-sizing: border-box;
+	box-shadow: 0px 0px 5px #ccc;
+}
+
+h1 {
+	background: -webkit-linear-gradient(45deg, #59deff, #6aec9c);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	display: flex;
+	margin: 10px;
+	justify-content: center;
+}
+
+h2 {
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.part {
+	flex-direction: column;
+	align-items: center;
+	background: #fff;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 10px 10px 10px 0;
+	width: 50vw;
+	font-size: 22px;
+	text-align: justify;
+}
+
+section {
+	position: relative;
+	left: 50%;
+	transform: translate(-50%);
+	box-shadow: 0px 0px 5px #bbb;
+}
+
+p {
+	margin: 10px 20px 0px 20px;
+}
+
+img {
+	width: 50%;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+.part li {
+	margin-left: 20px;
+}
+
+.part a {
+	text-decoration: underline;
+	cursor: pointer;
+	color: blue;
+}
+
+/* Responsividade */
+
+@media (max-width: 999px) {
+	header {
+		position: sticky;
+		top: 0;
+		z-index: 4;
+	}
+	body {
+		overflow-x: hidden;
+	}
+
+	.nav-list {
+		position: fixed;
+		top: 8vh;
+		right: 0;
+		width: 50vw;
+		height: 92vh;
+		background: rgba(39, 172, 205, 0.35);
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		transform: translateX(100%);
+		transition: transform 0.3s ease-in;
+		z-index: 4;
+		backdrop-filter: blur( 13.5px );
+   		-webkit-backdrop-filter: blur( 13.5px );
+	}
+	.nav-list li {
+		margin-left: 0;
+		opacity: 0;
+		color: #000;
+	}
+
+	.mobile-menu {
+		display: block;
+	}
+	
+	.part {
+		font-size: 15px;
+		width: 75vw;
+	}
+}
+
+.nav-list.active {
+	transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+	from {
+		opacity: 0;
+		transform: translateX(50px);
+		color: #fff;
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+		color: #000;
+	}
+}
+
+.mobile-menu.active .line1 {
+	transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+	opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+	transform: rotate(45deg) translate(-5px, -7px);
+}
